@@ -2,9 +2,9 @@
 Kelly Lu
 :toc: left
 
-Study sheet for 1st midterm
+Study Sheet
 
-== Computer Network
+== Computer Networks
 
 The [.blue]*Internet* is a computer network that interconnects computing devices: [.blue]*hosts / end systems*
 
@@ -66,8 +66,55 @@ Computer Communications is digital in binary (0s and 1s)
 
 == Information & Data Packets
 
-When one host has data to send to another host--sender segments the data and adds header bytes to each segment (*Packets*)
+When one host has data to send to another host--sender segments the data and adds header bytes to each segment ([.blue]*Packets*)
 which are then sent through the network to the receiver where they are reassembled into the original data.
+
+=== Packetization
+
+[%header, cols=4*]
+|===
+|Preamble
+|Header
+|Data
+|Trailer
+|===
+
+A [.underline]*preamble* is a fixed bit string that proceeds a data transmission.
+The receiver's clock runs the preamble until alerted of an incoming packet.
+Used to sync clocks.
+
+A [.underline]*header* describes the content of the packet.
+Can include: length of information and destination.
+
+A [.underline]*trailer* signifies the end of the packet. Has to be a unique pattern.
+
+==== Bit Stuffing
+When a sequence of consecutive 1s appear in the data, insert a dummy 0 bit in the bit sequence.
+The added 0s are removed at the reciever.
+
+==== Checksum
+packet =
+[%header, cols=4*]
+|===
+|Preamble
+|Header
+|Data
+|Checksum
+|Trailer
+|===
+
+x = data bits sent
+
+Create/compute a polynomial and use it as a checksum.
+
+Suppose receiver receives a bit stream `y`. Receiver computes `delta(y)`.
+....
+if delta(y) == checksum received,
+        accept y as the data
+if checksum == corrupted,
+        discard packet
+....
+
 
 === Packet Switches
 * Takes a packet arriving from one of its incoming communication links and forwards that packet on one of its outgoing communication links.
@@ -84,9 +131,9 @@ Therefore the time to transmit a packet of size `L bits` with a [.blue]*transmis
 `T = L / c` +
 `sec = bits / (bits/sec)`
 
-=== Manchester Encoding
+=== Manchester Encoding (Preamble & Clock Synchronization)
 .How are packets encoded and decoded?
-Use clock to decode the data -> Use clock to decode the data
+Use clock to encode the data -> Use clock to decode the data
 
 NOTE: The clocks on both computers have to be synchronized.
 
@@ -105,9 +152,9 @@ Ethernet Preamble (8 bytes)::
 
 NOTE: Even when clocks are synced, they can begin to drift.
 
-*Drift* is the difference from the sender's rate from the target rate.
+[.blue]*Drift* is the difference from the sender's rate from the target rate.
 
-*Drift Rate* is the difference in precision between the two clocks.
+[.blue]*Drift Rate* is the difference in precision between the two clocks.
 
 * Usually 10^-6^, 10^-7^, 10^-8^ for high precision clocks.
 * bps^2^
@@ -132,7 +179,7 @@ image:./images/image2.jpg[image2]
 
 Max Drift (btwn Sender and Receiver): (sec)
 
-`Ideal T~x~ time = T~x~ = L / c` +
+`Ideal time = T~x~ = L / c` +
 `Actual Time = T~x~ = L / c'` +
 `delta = minimum overlap needed`
 
@@ -168,7 +215,7 @@ In other words, the radio signal (input signal) is added with a carrier signal.
 
 `Modulated Signal = S(t) * S~c~(t)`
 
-A [.underline]#carrier signal# has a constant amplitude and frequency.
+A [.blue]*carrier signal* has a constant amplitude and frequency.
 
 `S~c~(t) = A~c~ * sin(2 * pi * f~c~ + theta~c~)` +
 `f~c~ >> f~m~`
@@ -329,3 +376,11 @@ to this connection to transmit the connection's data.
 |Data Link
 |Physical
 |===
+
+[.underline]#Presentation:# doest not alter content but interpret
+
+[.underline]#Session:# set up context for communication
+
+[.underline]#Transport:# deliver content
+
+[.underline]#Link:# transport interface

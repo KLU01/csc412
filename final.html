@@ -431,69 +431,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
 <h1>CSC412 Computer Networks</h1>
 <div class="details">
 <span id="author" class="author">Kelly Lu</span><br>
 </div>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_computer_network">Computer Network</a></li>
-<li><a href="#_physics_of_electromagnetic_signal_transmissions">Physics of Electromagnetic Signal Transmissions</a></li>
-<li><a href="#_information_data_packets">Information &amp; Data Packets</a>
-<ul class="sectlevel2">
-<li><a href="#_packet_switches">Packet Switches</a></li>
-<li><a href="#_data_transmission">Data Transmission</a></li>
-<li><a href="#_manchester_encoding">Manchester Encoding</a></li>
-<li><a href="#_drift_rate">Drift Rate</a></li>
-</ul>
-</li>
-<li><a href="#_modulation">Modulation</a>
-<ul class="sectlevel2">
-<li><a href="#_data_representation">Data Representation</a></li>
-<li><a href="#_what_is_modulation">What is Modulation?</a></li>
-<li><a href="#_amplitude_modulation">Amplitude Modulation</a></li>
-<li><a href="#_frequency_modulation">Frequency Modulation</a></li>
-</ul>
-</li>
-<li><a href="#_circuit_switching">Circuit Switching</a>
-<ul class="sectlevel2">
-<li><a href="#_packet_switch">Packet Switch</a></li>
-<li><a href="#_circuit_switch">Circuit Switch</a></li>
-</ul>
-</li>
-<li><a href="#_forwarding_tables_routing_protocols">Forwarding Tables &amp; Routing Protocols</a></li>
-<li><a href="#_delay_loss">Delay &amp; Loss</a>
-<ul class="sectlevel2">
-<li><a href="#_processing_delay">Processing Delay</a></li>
-<li><a href="#_queuing_delays_packet_loss">Queuing Delays &amp; Packet Loss</a></li>
-<li><a href="#_transmission_delay">Transmission Delay</a></li>
-<li><a href="#_propagation_delay">Propagation Delay</a></li>
-<li><a href="#_bandwidth">Bandwidth</a></li>
-</ul>
-</li>
-<li><a href="#_multiplexing">Multiplexing</a>
-<ul class="sectlevel2">
-<li><a href="#_frequency_division_multiplexing_fdm">Frequency-Division Multiplexing (FDM)</a></li>
-<li><a href="#_time_division_multiplexing_tdm">Time-Division Multiplexing (TDM)</a></li>
-</ul>
-</li>
-<li><a href="#_layers_of_abstraction">Layers of Abstraction</a></li>
-</ul>
-</div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Study sheet for 1st midterm</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_computer_network">Computer Network</h2>
+<h2 id="_computer_networks">Computer Networks</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong class="blue">Internet</strong> is a computer network that interconnects computing devices: <strong class="blue">hosts / end systems</strong></p>
@@ -519,71 +466,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Hosts are connected together by a network of <strong>communication links</strong> and <strong>packet switches</strong>.</p>
-</div>
-<div class="ulist">
-<div class="title">Communication Links</div>
-<ul>
-<li>
-<p>Made up of different types of physical media:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Coaxial cable</p>
-</li>
-<li>
-<p>Copper Wire</p>
-</li>
-<li>
-<p>Optical Fiber</p>
-</li>
-<li>
-<p>Radio spectrum</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Different Links transmit data at different rates (<strong>Transmission Rate (bits / sec)</strong>)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>A computer sends a collection of bits (<strong class="blue">Packets</strong>: an encapsulation of data).
-<strong>Packet Switches</strong> forward packets to its outgoing communication links towards its destination host.</p>
-</div>
-<div class="paragraph">
 <p>Laptops / computers have an omni-directional antenna (<strong>Network Card</strong>) that converts between digital and electromagnetic waves.</p>
 </div>
 <div class="paragraph">
 <p>Hosts access the Internet through <strong class="blue">Internet Service Providers (ISPS)</strong> which in itself a network of packet switches and communication links</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_physics_of_electromagnetic_signal_transmissions">Physics of Electromagnetic Signal Transmissions</h2>
-<div class="sectionbody">
-<div class="paragraph left text-center">
-<p><span class="image"><img src="./images/image1.jpg" alt="image1"></span></p>
-</div>
-<div class="paragraph">
-<p>v: velocity (electromagnetic) propagation<br>
-T_prop: signal propagation delay time<br>
-l: length of medium</p>
-</div>
-<div class="paragraph">
-<p><code>T<sub>prop</sub> = l / v</code></p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Given a wire 8,000 miles long traveling at a speed of 180,000 miles/sec. What is the propagation time?</p>
-</div>
-<div class="paragraph">
-<p><code>T<sub>prop</sub> = 8,000 miles / 180,000 miles/sec</code><br>
-<code>= 2 / 45 sec = 0.044 sec = 44 ms</code></p>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Signals travel in a straight line whereas wires bend.
@@ -601,182 +487,6 @@ l: length of medium</p>
 <div class="literalblock">
 <div class="content">
 <pre>Digital &lt;------network card------&gt; E.M.</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_information_data_packets">Information &amp; Data Packets</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When one host has data to send to another host&#8212;&#8203;sender segments the data and adds header bytes to each segment (<strong>Packets</strong>)
-which are then sent through the network to the receiver where they are reassembled into the original data.</p>
-</div>
-<div class="sect2">
-<h3 id="_packet_switches">Packet Switches</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Takes a packet arriving from one of its incoming communication links and forwards that packet on one of its outgoing communication links.</p>
-</li>
-<li>
-<p>Types:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Routers (Network Core)</p>
-</li>
-<li>
-<p>Link-layer Switches (Access Networks)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_data_transmission">Data Transmission</h3>
-<div class="paragraph">
-<p>Packets are transmitted over each communication link at a rate equal to the full transmission rate of the link.
-Therefore the time to transmit a packet of size <code>L bits</code> with a <strong class="blue">transmission rate</strong> of <code>c bits/sec</code> is equal to <code>L/c seconds</code></p>
-</div>
-<div class="paragraph">
-<p><code>(Transmission Time) = (size of packet) / (Transmission Rate or Clock Rate)</code><br>
-<code>T = L / c</code><br>
-<code>sec = bits / (bits/sec)</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_manchester_encoding">Manchester Encoding</h3>
-<div class="paragraph">
-<div class="title">How are packets encoded and decoded?</div>
-<p>Use clock to decode the data &#8594; Use clock to decode the data</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The clocks on both computers have to be synchronized.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<div class="title">How to synchronize clocks</div>
-<p>Use a <strong class="blue">Preamble</strong> before every packet. A preamble is a bit string that proceeds a data transmission (FIXED).
-The receiver&#8217;s clock runs the preamble until alerted of an incoming packet. The two then begin to synchronize.
-By the time the actual data stream comes in, the two clocks would be synced.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Ethernet Preamble (8 bytes)</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>First 7 bytes: 10101010</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wake up receiver &amp; synchronize clocks</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Last byte: 10101011</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Last 2 bits alert receiver that the "important" data is about to come</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_drift_rate">Drift Rate</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Even when clocks are synced, they can begin to drift.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Drift</strong> is the difference from the sender&#8217;s rate from the target rate.</p>
-</div>
-<div class="paragraph">
-<p><strong>Drift Rate</strong> is the difference in precision between the two clocks.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Usually 10<sup>-6</sup>, 10<sup>-7</sup>, 10<sup>-8</sup> for high precision clocks.</p>
-</li>
-<li>
-<p>bps<sup>2</sup></p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Upper-bound on drift rate</dt>
-<dd>
-<p><code>drift rate = dc / dt |<sub>max</sub></code></p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<div class="title">Worst Case Clock / Transmission Rate at Receivers</div>
-<p><code>c' = receiver&#8217;s clock</code> # By clock we mean transmission rate<br>
-<code>c = sender&#8217;s clock</code></p>
-</div>
-<div class="paragraph">
-<p><code>c' = c<sub>0</sub> + (dc / dt) |<sub>max</sub> * (L / c<sub>0</sub>)</code><br>
-<code>&#8658; (Transmission Rate of Receiver) = (Transmission Rate of Sender) + (Drift Rate) * (Transmission Time of Sender)</code><br></p>
-</div>
-<div class="paragraph">
-<p>(Transmission Time of Sender) = How long the clock can stay synchronized</p>
-</div>
-<div class="paragraph">
-<p>(Drift Rate) * (Transmission Time of Sender) = (Transmission Rate of packet while still in sync)</p>
-</div>
-<div class="paragraph">
-<div class="title"><strong class="blue">MAX Drift</strong></div>
-<p><span class="image"><img src="./images/image2.jpg" alt="image2"></span></p>
-</div>
-<div class="paragraph">
-<p>Max Drift (btwn Sender and Receiver): (sec)</p>
-</div>
-<div class="paragraph">
-<p><code>Ideal T<sub>x</sub> time = T<sub>x</sub> = L / c</code><br>
-<code>Actual Time = T<sub>x</sub> = L / c'</code><br>
-<code>delta = minimum overlap needed</code></p>
-</div>
-<div class="paragraph">
-<p><code>|T<sub>xi</sub> - T<sub>xa</sub>| &lt; T - delta</code><br>
-<code>&#8658; |(L/c) - (L / c')| &lt; T - delta</code> # <code>T - delta</code> is the allowed drift</p>
-</div>
-<div class="paragraph">
-<p>In terms of (1 / s):</p>
-</div>
-<div class="paragraph">
-<p><code>(c'/L) - (c / L) &lt; delta - (1 / c)</code></p>
 </div>
 </div>
 </div>
@@ -815,7 +525,7 @@ In other words, the radio signal (input signal) is added with a carrier signal.<
 <p><code>Modulated Signal = S(t) * S<sub>c</sub>(t)</code></p>
 </div>
 <div class="paragraph">
-<p>A <span class="underline">carrier signal</span> has a constant amplitude and frequency.</p>
+<p>A <strong class="blue">carrier signal</strong> has a constant amplitude and frequency.</p>
 </div>
 <div class="paragraph">
 <p><code>S<sub>c</sub>(t) = A<sub>c</sub> * sin(2 * pi * f<sub>c</sub> + theta<sub>c</sub>)</code><br>
@@ -917,150 +627,6 @@ When the network establishes the circuit, it also reserves a constant transmissi
 </div>
 </div>
 <div class="sect1">
-<h2 id="_forwarding_tables_routing_protocols">Forwarding Tables &amp; Routing Protocols</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Every router has a <strong class="blue">forwarding table</strong> that maps destination addresses (or portions of the destination addresses) to
-that router&#8217;s outbound links.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>packet -&gt; router(address) -&gt; outbound link</pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Routing Protocol</strong> may determine the shortest path from each router to each destination + use the shortest path to configure
-the forwarding tables in the routers.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_delay_loss">Delay &amp; Loss</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><code>d<sub>nodal</sub> = d<sub>processing</sub> + d<sub>queue</sub> + d<sub>transmission</sub> + d<sub>propagation</sub></code></p>
-</div>
-<div class="sect2">
-<h3 id="_processing_delay">Processing Delay</h3>
-<div class="paragraph">
-<p><strong>Processing Delay</strong> can include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The time required to examine the  packet&#8217;s header and determine where to direct the packet<br></p>
-</li>
-<li>
-<p>Time needed to check for bit-level errors in the packet that occurred in transmitting the packet&#8217;s bits</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_queuing_delays_packet_loss">Queuing Delays &amp; Packet Loss</h3>
-<div class="paragraph">
-<p>A <strong>packet switch</strong> has an <strong class="blue">output buffer</strong> (<strong>output queue</strong>) which store packets that the router is about to send into a link.<br>
-If an arriving packet finds the link busy, it must wait in the buffer. This is a <strong>queuing delay</strong>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Delay is variable + depend on congestion in network</p>
-</li>
-<li>
-<p>Buffer Space = finite</p>
-</li>
-<li>
-<p>If buffer is completely full with other packets, <strong class="blue">packet loss</strong> will occur</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Either arriving or already-queued packets will be dropped.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_transmission_delay">Transmission Delay</h3>
-<div class="paragraph">
-<p>The amount of time to transmit all of the packet&#8217;s bits into the link: <code>L / c</code></p>
-</div>
-<div class="paragraph">
-<p><a href="#_data_transmission">Data Transmission</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_propagation_delay">Propagation Delay</h3>
-<div class="paragraph">
-<p><strong>Propagation Delay</strong> is the time required to propagate from the beginning of the link to the router.</p>
-</div>
-<div class="paragraph">
-<p>The bit propagates at the propagation speed of the link (depends on physical medium ~ <code>2*10<sup>8</sup> - 3*10<sup>8</sup> meters/sec</code>)</p>
-</div>
-<div class="paragraph">
-<p><code>Propagation delay = distance between the two routers / propagation speed</code></p>
-</div>
-<div class="paragraph">
-<p><a href="#_physics_of_electromagnetic_signal_transmissions">Physics of Electromagnetic Signal Transmissions</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_bandwidth">Bandwidth</h3>
-<div class="paragraph">
-<p>Every link has a capacity <code>c<sub>x</sub> bits/sec</code>. This is called the <strong class="blue">Bandwidth</strong>.</p>
-</div>
-<div class="paragraph">
-<p><strong class="blue">Cross-traffic</strong> takes place within the links where more than transmission shares a link and therefore take up
-some of the system bandwidth.</p>
-</div>
-<div class="paragraph">
-<p><code>capacity of a path = min {c<sub>0</sub>, c<sub>1</sub>, &#8230;&#8203;}</code></p>
-</div>
-<div class="paragraph">
-<p><code>available bandwidth = min {c<sub>0</sub>, c<sub>1</sub>, &#8230;&#8203;} - cross_traffic</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Hosts have intelligence to know what bandwidth is but the routers don&#8217;t.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Hosts therefore have to infer how much bandwidth is available. This is called <strong class="blue">Bandwidth Probing</strong>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>adjust the transmission rate until a loss event occurs</p>
-<div class="ulist">
-<ul>
-<li>
-<p>increase transmission rate to probe for rate at which congestion onset begins. Then it is decreased. and tries probing again.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>is reactive, not predictive &#8658; stops once limit is reached</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="underline">Software defied networks</span> with policies, distribute, control &amp; limit congestion in routers.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_multiplexing">Multiplexing</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1135,12 +701,24 @@ to this connection to transmit the connection&#8217;s data.</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p><span class="underline">Presentation:</span> doest not alter content but interpret</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Session:</span> set up context for communication</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Transport:</span> deliver content</p>
+</div>
+<div class="paragraph">
+<p><span class="underline">Link:</span> transport interface</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-13 23:42:25 EST
+Last updated 2018-12-17 03:10:56 EST
 </div>
 </div>
 </body>

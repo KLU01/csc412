@@ -1,3 +1,3 @@
 #!/bin/bash
 
-asciidoctor index.adoc
+asciidoctor final.adoc
